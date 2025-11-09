@@ -42,12 +42,27 @@ if (num1 === num2) { //Check for value and type both
 
 //Switch case 
 
-switch(3) {
+switch(4) {
     case 1: console.log("Ayush")
     break
     case 2: console.log("Arpita")
     break
     case 3: console.log("Bhaiya-relation")
     break
+    default:
+        console.log("give a valid input")
 }
 
+// nested if else
+
+    let height = 170
+
+    if (height >= 170) {
+        console.log("Tall")
+    } else if (height >= 150) {
+        console.log("Average")
+    } else if (height >=120) {
+        console.log("Below")
+    } else {
+        console.log("Below Below")
+    }
