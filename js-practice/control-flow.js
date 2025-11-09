@@ -53,7 +53,7 @@ switch(4) {
         console.log("give a valid input")
 }
 
-// nested if else
+// nested if-else
 
     let height = 170
 
