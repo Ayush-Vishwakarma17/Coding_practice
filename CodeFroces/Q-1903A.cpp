@@ -17,14 +17,10 @@ int main() {
         if (is_sorted(nums.begin(), nums.end())) {
             result.push_back("YES");
             continue;
-        } else if (nums.size() == 1) {
-            result.push_back("YES");
-        } else if (nums.size() > 1 && k <= 1) {
-            result.push_back("NO");
-        } else if ( nums.size() >= 2 && k >= 2) {
+        } else if (k >= 2) {
             result.push_back("YES");
         } else {
-            continue;
+            result.push_back("NO");
         }
     }
     for (auto ans: result) {
