@@ -2,28 +2,28 @@
 using namespace std;
 
 int main() {
-    vector<string> result;
+    vector<string> answer;
 
     int t; cin>>t;
     while (t) {
         t--;
         int n, k; cin >>n >> k;
-        vector<int> nums;
+        vector<int> inputs;
         while (n) {
             n--;
             int val; cin >> val;
-            nums.push_back(val);
+            inputs.push_back(val);
         } 
-        if (is_sorted(nums.begin(), nums.end())) {
-            result.push_back("YES");
+        if (is_sorted(inputs.begin(), inputs.end())) {
+            answer.push_back("YES");
             continue;
         } else if (k >= 2) {
-            result.push_back("YES");
+            answer.push_back("YES");
         } else {
-            result.push_back("NO");
+            answer.push_back("NO");
         }
     }
-    for (auto ans: result) {
+    for (auto ans: answer) {
         cout<<ans<<endl;
     }
     return 0;
