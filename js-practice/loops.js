@@ -40,3 +40,16 @@ const myObj = {
 for (let value in myObj) {
     console.log(value, " -> ", myObj[value])
 }
+
+
+//for each loop 
+
+const mp = new Map
+mp.set('IN', "India")
+mp.set('CN', "China")
+mp.set('RU', "Russia")
+mp.set('JP', "Japan")
+
+mp.forEach((/*value, key, complete map/array*/ id,index, mapname) => {
+    console.log(id, "-> ", index, "->", mapname);
+})
