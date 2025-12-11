@@ -1,23 +1,22 @@
 #include<bits/stdc++.h>
 using namespace std; 
+//solution for cf 1831A
 int main() {
     int t; cin>>t;
     while (t) {
+        //t for multiple testcases
         t--;
         int n; cin>>n;
         vector<int> ans;
         while (n) {
             n--;
             int x; cin>>x;
+            //takin all inputs to array
             ans.push_back(x);
         }
-        if (is_sorted(ans.begin(), ans.end())) {
-            sort(ans.rbegin(), ans.rend());
-        } else {
-            sort(ans.begin(), ans.end());
-        }
+        //my observation says if sorted then sort the elements in descending order
         for (auto it: ans) {
-            cout<<it;
+            cout<<(ans.size()+1-it)<<" ";
         }
         cout<<endl;
     }

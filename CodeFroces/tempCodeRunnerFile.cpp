@@ -4,25 +4,22 @@ int main() {
     int t; cin>>t;
     while (t) {
         t--;
-        bool found = false;
-        int n,k,x; cin>>n>>k>>x;
-        for (int i = 1; i <= k; i++) {
-            if (i != x && (n % i == 0)) {
-                cout<<"YES"<<endl;
-                int num = (n/i);
-                cout<<num<<endl;
-                while (num) {
-                    cout << i <<" "; 
-                    num--;
-                }
-                found = true;
-                cout<<endl;
-            }
+        int n; cin>>n;
+        vector<int> ans;
+        while (n) {
+            n--;
+            int x; cin>>x;
+            ans.push_back(x);
         }
-        if (found) {
-            continue;
+        if (is_sorted(ans.begin(), ans.end())) {
+            sort(ans.rbegin(), ans.rend());
+        } else {
+            sort(ans.begin(), ans.end());
         }
-        cout<<"NO";
+        for (auto it: ans) {
+            cout<<it<<" ";
+        }
+        cout<<endl;
     }
     return 0;
 }
