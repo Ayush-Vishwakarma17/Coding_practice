@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std; 
-//solution for cf 1831A
+//solution for cf 1831A Twin permutation
 int main() {
     int t; cin>>t;
     while (t) {
