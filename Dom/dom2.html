@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom test</title>
+</head>
+<body style="background-color: #212121; color: white; font-size: 40px; font-family: 'Segoe UI';">
+    <ul class="games">
+        <li>dota2</li>
+        <li>valorant</li>
+        <li>counter strike</li>
+        <li>pubg</li>
+    </ul>
+    <script>
+
+        const gamename = document.createElement('li')
+        gamename.appendChild(document.createTextNode('evil with in'))
+        const evil = document.querySelector('.games').appendChild(gamename)
+
+        evil.remove()
+
+        //function to add 
+
+        function addGame(gamename) {
+            const game = document.createElement('li')
+            game.appendChild(document.createTextNode(gamename))
+            document.querySelector('.games').appendChild(game)
+        }
+
+        addGame('Moba Lagends')
+
+        // edit 
+
+        const counter = document.querySelector('ul li:nth-child(3)')
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode('lionKind'))
+        counter.replaceWith(li)
+
+
+        //removing 
+
+        li.remove()
+
+    </script>
+</body>
+</html>
