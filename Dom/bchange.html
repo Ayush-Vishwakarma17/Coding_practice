@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background-color-change</title>
+</head>
+<body class="background">
+     <a id="green" style="text-decoration: none; font-size: 20px; font-weight: 600; font-family: 'Segoe UI'; background-color: rgb(56, 92, 22); padding: 10px; border-radius: 50px; color: rgb(61, 217, 61); position: absolute; top: 50%; left: 40%; cursor: pointer;">Green</a>
+
+     <a id="red" style="text-decoration: none; font-size: 20px; font-weight: 600; font-family: 'Segoe UI'; background-color: rgba(230, 24, 24, 0.274); padding: 10px; border-radius: 50px; color: rgba(243, 16, 16, 0.971); position: absolute; top: 50%; left: 50%; cursor: pointer;">Red</a>
+
+     <a id="blue" style="text-decoration: none; font-size: 20px; font-weight: 600; font-family: 'Segoe UI'; background-color: rgba(13, 93, 119, 0.701); padding: 10px; cursor: pointer; border-radius: 50px; color: rgba(62, 81, 255, 0.971); position: absolute; top: 50%; left: 60%;">Blue</a>
+</body>
+
+<style>
+    body {
+        transition: background-color 0.4s ease-in-out;
+    }
+    .background {
+        background-color: #212121;
+    }
+    .blue {
+        background-color: rgb(120, 120, 246);
+    }
+
+    .green {
+        
+        background-color: green;
+    }
+
+    .red {
+        background-color: rgb(247, 131, 131);
+    }
+</style>
+
+<script>
+    const green = document.getElementById('green')
+    const blue = document.getElementById('blue')
+    const red = document.getElementById('red')
+    green.addEventListener('click',() => {
+        document.body.classList.remove('red','blue','background')
+        document.body.classList.add('green')
+    })
+
+    blue.addEventListener('click',() => {
+        document.body.classList.remove('red','green','background')
+        document.body.classList.add('blue')
+    })
+
+    red.addEventListener('click',() => {
+        document.body.classList.remove('green','blue','background')
+        document.body.classList.add('red')
+    })
+</script>
+</html>
