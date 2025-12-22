@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom test</title>
+</head>
+<body style="background-color: #212121; color: red; font-size: 40px; font-family: 'Segoe UI'; font-weight: 500;">
+    <ul class="things">
+        <li>pen</li>
+        <li>pencil</li>
+        <li>cutter</li>
+    </ul>
+    <script>
+        function addthing(thing) {
+            const li = document.createElement('li')
+            li.appendChild(document.createTextNode(thing))
+            document.querySelector('.things').appendChild(li)
+        }
+
+        addthing('aalooo')
+        addthing('bhindi')
+        addthing('tamatar')
+
+        document.querySelector('.things li:nth-child(5)').remove()
+    </script>
+</body>
+</html>
