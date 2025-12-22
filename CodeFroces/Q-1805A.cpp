@@ -5,7 +5,7 @@ int main() {
     while (t) {
         t--;
         vector<int> nums;
-        int ans = 1;
+        int ans = 0;
         int n; cin>>n;
         while (n) {
             n--;
@@ -16,8 +16,8 @@ int main() {
             ans^=it;
         }
         if (nums.size() % 2 != 0) {
-            cout<<(nums.size()+1)<<endl;
-        } else if (nums.size() % 2 == 0 && ans == 0) {
+            cout<<ans<<endl;
+        } else if (ans == 0) {
             cout<<0<<endl;
         } else {
             cout<<-1<<endl;
