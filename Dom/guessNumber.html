@@ -162,7 +162,7 @@
       
       console.log(remainedGuess)
       const number = Math.floor((Math.random()*100))+1
-
+      let guessArray = []
       let totalGuess = 10;
       remainedGuess.textContent = `${totalGuess} guesses left`
 
@@ -172,9 +172,9 @@
 
         const inputValue = parseInt(document.querySelector('.inputValue').value)
 
-        if (isNaN(inputValue) || inputValue > 100 || inputValue < 0) {
+        if (isNaN(inputValue) || inputValue > 100 || inputValue < 1) {
           heading.textContent = 'Enter a valid number please.'
-          
+          return
         }
 
         
@@ -184,15 +184,17 @@
           heading.textContent = 'Congratulation, You guessed it'
           submit.disabled = true
           document.querySelector('.inputValue').disabled = true
+          return 
         } else if (inputValue > number) {
           heading.textContent = 'Your guess was too high'
         } else {
           heading.textContent = 'Your guess was too low'
         }
-        previousGuess.textContent = inputValue
-
-        remainedGuess.innerHTML = `${totalGuess} guesses left`
+        guessArray.push(inputValue)
+        previousGuess.textContent = guessArray.join(',')
         totalGuess--;
+        remainedGuess.innerHTML = `${totalGuess} guesses left`
+        
 
         if (totalGuess === 0) {
           card.classList.add('expand')
@@ -200,6 +202,7 @@
           remainedGuess.innerHTML = `${totalGuess} guesses left`
           submit.disabled = true
           document.querySelector('.inputValue').disabled = true
+          return
         }
         })
         
