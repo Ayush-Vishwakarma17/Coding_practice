@@ -144,6 +144,9 @@
             padding-right: 10px;
             }
         }
+        .expand {
+          width: 60%;
+        }
         
     </style>
 
@@ -155,29 +158,53 @@
       const previousGuess = document.querySelector('.previousGuess')
       const submit = document.querySelector('.submit')
       const heading = document.querySelector('.heading')
+      const card = document.querySelector('.card')
       
       console.log(remainedGuess)
       const number = Math.floor((Math.random()*100))+1
 
       let totalGuess = 10;
+      remainedGuess.textContent = `${totalGuess} guesses left`
 
-      while (totalGuess > 0) {
+      
 
         submit.addEventListener('click', () => {
-          const inputValue = parseInt(document.querySelector('.inputValue').value)
-          remainedGuess.innerHTML = `${totalGuess} guesses left`
-        if (inputValue === number) {
-          heading.textContent('Congratulation, You guessed it')
-        } else if (inputValue > number) {
-          heading.textContent('Your guess was too high')
-        } else {
-          heading.textContent('Your guess was too high')
+
+        const inputValue = parseInt(document.querySelector('.inputValue').value)
+
+        if (isNaN(inputValue) || inputValue > 100 || inputValue < 0) {
+          heading.textContent = 'Enter a valid number please.'
+          
         }
+
+        
+
+        if (inputValue === number) {
+          card.classList.add('expand')
+          heading.textContent = 'Congratulation, You guessed it'
+          submit.disabled = true
+          document.querySelector('.inputValue').disabled = true
+        } else if (inputValue > number) {
+          heading.textContent = 'Your guess was too high'
+        } else {
+          heading.textContent = 'Your guess was too low'
+        }
+        previousGuess.textContent = inputValue
+
+        remainedGuess.innerHTML = `${totalGuess} guesses left`
         totalGuess--;
 
+        if (totalGuess === 0) {
+          card.classList.add('expand')
+          heading.textContent = 'You lost, Try again next time'
+          remainedGuess.innerHTML = `${totalGuess} guesses left`
+          submit.disabled = true
+          document.querySelector('.inputValue').disabled = true
+        }
         })
         
-      }
+        
+      
 
 
     </script>
