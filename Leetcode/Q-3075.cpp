@@ -9,12 +9,12 @@ public:
         int lessnum = 0;
         while (k) {
             k--;
-            int sum = happiness[i]-lessnum;
-            if (sum < 0) {
-                sum = 0;
+            int value = happiness[i]-lessnum;
+            if (value < 0) {
+                value = 0;
                 break;
             }
-            maxhappiness += sum;
+            maxhappiness += value;
             lessnum++;
             i--;
         }
