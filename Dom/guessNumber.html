@@ -30,7 +30,7 @@
         <span style="font-size: 1rem; font-weight: 400"
           >Rule: You have 10 attempts only</span
         >
-        <h1 class="heading" style="height: 45px">Guess The Number</h1>
+        <h1 class="heading" style="height: 45px; text-align: center;">Guess The Number</h1>
 
         <div
           style="
@@ -173,7 +173,7 @@
         const inputValue = parseInt(document.querySelector('.inputValue').value)
 
         if (isNaN(inputValue) || inputValue > 100 || inputValue < 1) {
-          heading.textContent = 'Enter a valid number please.'
+          heading.innerText = 'Enter a valid number please.' 
           return
         }
 
