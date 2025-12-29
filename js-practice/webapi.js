@@ -6,7 +6,7 @@ setTimeout((n) => {
     console.log(n)
 }, 1000, "Ayush")
 
-//function to say radhe radhe
+// //function to say radhe radhe
 
 function greet() {
     console.log("radhe radhe")
@@ -19,3 +19,9 @@ setTimeout(greet, 2000)
 //simply printing 
 
 console.log("vishwakarma")
+
+const printHi = setTimeout(greet, 2000)
+const clear = clearTimeout(printHi)
+
+const printHiMulti = setInterval(greet,1000)
+clearInterval(printHiMulti)
