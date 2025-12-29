@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>unlimited-back-changer</title>
+</head> 
+<body style="background-color: #212121;">
+    
+    <div class="div">
+        <button id="start">start</button>
+        <button id="stop">stop</button>
+    </div>
+
+    <style>
+        *{
+            overflow: hidden;
+        }
+        #start {
+            background-color: white;
+            outline: none;
+            border: none;
+            color: black;
+            font-weight: 400;
+            font-family: 'Segoe UI';
+            font-size: 35px;
+            height: 4rem;
+            width: 8rem;
+            border-radius: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #stop {
+            background-color: white;
+            outline: none;
+            border: none;
+            color: black;
+            font-weight: 400;
+            font-family: 'Segoe UI';
+            font-size: 35px;
+            height: 4rem;
+            width: 8rem;
+            border-radius: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .div {
+            height: 100vh;
+            background-color: rgb(32, 40, 51);
+            border-radius: 17px;
+            display: flex; align-items: center; justify-content: center;
+            gap: 2rem;
+        }        
+    </style>
+    <script>
+        const background = document.querySelector('.div')
+        const start = document.querySelector('#start')
+        const stop = document.querySelector('#stop')
+
+        const hex = '0123456789ABCDEF'
+        function generateCode() {
+            let code = '#'
+            for (let i = 0; i < 6; i++) {
+            code += hex[(Math.floor(Math.random()*16))]
+        }
+            return code
+        }
+
+        const changeColor = function changeColor() {
+            let color = generateCode()
+            background.style.backgroundColor =  color
+        }
+
+        let interval = null
+        start.addEventListener('click', () => {
+            if (interval !== null) {
+                return
+            }
+            interval = setInterval(changeColor, 1000)
+        })
+
+        stop.addEventListener('click', () => {
+            clearInterval(interval)
+            interval = null
+        })
+        
+        
+    </script>
+</body>
+</html>
