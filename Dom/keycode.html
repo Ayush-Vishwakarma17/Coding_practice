@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keycode</title>
+</head>
+<body style="background-color: #212121;">
+    <div class="div">
+        <h1 id="start">Press a key to seee</h1>
+        
+    </div>
+
+    <style>
+        *{
+            overflow: hidden;
+            font-family: 'Segoe UI';
+            color: white;
+        }
+        
+        .div {
+            height: 100vh;
+            background-color: rgb(32, 40, 51);
+            border-radius: 17px;
+            display: flex; align-items: center; justify-content: center;
+            gap: 2rem;
+        }        
+    </style>
+
+    <script>
+        const heading = document.querySelector('#start')
+        window.addEventListener('keydown', (e) => {
+            if (e.code === 'Space') {
+                heading.innerHTML = `space is pressed`
+            } else {
+                heading.innerHTML = `${e.key} is pressed` 
+            }         
+        })
+    </script>
+</body>
+</html>
