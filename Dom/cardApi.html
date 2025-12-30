@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image-follower-card</title>
+</head> 
+<body style="background-color: #212121;">
+    <!-- elements -->
+    <div class="main">  
+
+        <div class="innermain">
+            <div class="image">
+                
+            </div>
+            <h1>Followers Count</h1>
+            <h1 class="count"> Count</h1>
+            <button class="show">Show</button>
+        </div>
+
+    </div>
+
+    <!-- styling  -->
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;padding: 0;
+            color: white;
+            font-family: 'Courier New';
+            font-weight: 400;
+        }
+        .show {
+            height: 3rem;
+            width: 5rem;
+            font-size: 20px;
+            border-radius: 10px;
+            background-color: #6b6969;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+        .main {
+            background-color: #383838;
+            height: 32rem;
+            width: 30rem;
+            margin: 100px auto;
+            border-radius: 50px;
+            box-shadow: rgb(117, 237, 157) 0 0 20px 2px,
+                        rgb(255, 62, 28) 0 0 30px 2px,
+                        rgb(150, 242, 251) 0 0px 50px 5px;
+
+            display: flex; justify-content: center; align-items: center;
+        }
+        .innermain {
+            display: flex; flex-direction: column; justify-content: space-around; align-items: center;
+            height: 100%;
+            width: 100%;
+            border-radius: inherit;
+        }
+        .image {
+            height: 70%;
+            width: 100%;
+            text-align: center;
+        }
+        .images {
+            margin-top: 10px;
+            height: 85%;
+            width: 95%;
+            object-fit: cover;
+            border-radius: 50px;
+        }
+        .count {
+            font-size: 18px;
+        }
+    </style>
+
+    <!-- scripting -->
+    <script>
+        const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+        const show = document.querySelector('.show')
+        const count = document.querySelector('.count')
+        const image = document.querySelector('.image')
+
+        const xhr = new XMLHttpRequest()
+        xhr.open('GET', requestUrl)
+        xhr.onreadystatechange = () => {
+            console.log(xhr.readyState)
+        
+            if (xhr.readyState === 4) {
+                const data = JSON.parse(xhr.responseText)
+                console.log(typeof(data)) 
+                show.addEventListener('click', () => {
+                    count.textContent = `of Hitesh sir: ${data.followers}`
+                    let img = document.createElement('img')
+                    img.src = data.avatar_url
+                    img.setAttribute('class', 'images')
+                    image.appendChild(img)
+                    show.disabled = true
+                })  
+            }
+        }
+        xhr.send()
+        
+        
+            
+    </script>
+</body>
+</html>
