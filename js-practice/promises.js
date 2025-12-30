@@ -86,11 +86,11 @@ const promiseFive = new Promise(function (resolve, reject) {
 
 // using async await 
 
-async function consumePromiseFive() {
+async function takePromiseFive() {
     const response = await promiseFive
     console.log(response.username)
 }
-consumePromiseFive()
+takePromiseFive()
 
 //using async await with try catch block
 
