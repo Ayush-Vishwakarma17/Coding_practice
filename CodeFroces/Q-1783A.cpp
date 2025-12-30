@@ -14,15 +14,18 @@ int main() {
             cout<<"NO"<<endl;
         } else {
             cout<<"YES"<<endl;
-            int i = 1, j = n-2;
+            int i = 0, j = n-1;
+            vector<int> nums2;
             while (i <= j) {
-                if (nums[i] == nums[i-1] || nums[j] == nums[j+1]) {
-                    swap(nums[i], nums[j]);
-                }
+                nums2.push_back(nums[i]);
+                nums2.push_back(nums[j]);
                 i++;
                 j--;
             }
-            for (auto it: nums) {
+            if (n % 2 == 1) {
+                nums2.pop_back();
+            }
+            for (auto it: nums2) {
                 cout<<it<<" ";
             }
             cout<<endl;
