@@ -1,3 +1,7 @@
+
+//set name function to set the name using another function
+
+
 function setname(username) {
     this.username = username
     console.log('called')
@@ -24,3 +28,20 @@ function createUser(username, pass, email) {
 
 const userOne = new createUser('ayu', '9090', '@hello')
 console.log(userOne)
+
+
+//checkin for user Two;
+
+
+function checkName (name) {
+    if (name === 'Ayush') {
+        this.name = 'Ayushi'
+    }
+}
+
+function guyName(name, age) {
+    checkName.call(this, name);
+    this.age = age;
+}
+const userTwo = new guyName('Ayush', 18);
+console.log(userTwo)
