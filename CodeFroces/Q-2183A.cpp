@@ -8,20 +8,19 @@ int main() {
         for (int i = 0; i < n; i++) {
             cin>>a[i];
         }
-        int num1 = a[0];
-        if (num1 == 0) {
-            int num2 = a[1];
-            int num3 = a[a.size()-1];
-            if (num2 == 0 && num3 == 0) {
-                cout<<"Bob"<<endl;
-            } else if ((num2 == 0 && num3 == 1) || num2 == 1 && num3 == 0) {
-                cout<<"Bob"<<endl;
-            } else {
-                cout<<"Alice"<<endl;
+        bool flag = true;
+        for (int i = 1; i < n; i++) {
+            if (a[i] == a[i-1]) {
+                flag = false;
+                break;
             }
+        }
+        if (flag = true && (a[0] == 0 && a[a.size()-1] == 0)) {
+            cout<<"Bob"<<endl;
         } else {
             cout<<"Alice"<<endl;
         }
+        
     }
     return 0;
 }
