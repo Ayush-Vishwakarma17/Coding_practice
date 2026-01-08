@@ -4,15 +4,28 @@ int main() {
     int t; cin>>t;
     while (t--) {
         long long n, k, x; cin>>n>>k>>x;
-        while ((k > 0 && n > 0) && x > 0) {
-            x -= n;
-            n--;
+        long long summin = 0;
+        long long summax = 0;
+        for (int i = 1; i <= n; i++) {
+            
+            summin += i;
             k--;
+            if (k == 0) {
+                break;
+            }
+            
         }
-        if ((k == 0 && x <= 0) && n >= 0) {
-            cout<<"YES"<<endl;
+        for (int i = n; i >= 1 ; i--) {
+            summax += i;
+            k--;
+            if (k == 0) {
+                break;
+            }
+        }
+        if (summin <= x && x <= summax) {
+            cout<<"Yes"<<endl;
         } else {
-            cout<<"NO"<<endl;
+            cout<<"No"<<endl;
         }
     }
     return 0;
