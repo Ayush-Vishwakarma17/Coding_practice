@@ -8,12 +8,12 @@ int main() {
     int t; cin>>t;
     while (t--) {
         long long n, k, x; cin>>n>>k>>x;
-        long long summin = 0;
-        long long summax = 0;
-        summin = k*(k+1)/2;
-        summax = n*(n+1)/2 - (n-k)*(n-k+1)/2;
+        long long initialMinSum = 0;
+        long long endMaxSum = 0;
+        initialMinSum = k*(k+1)/2;
+        endMaxSum = n*(n+1)/2 - (n-k)*(n-k+1)/2;
 
-        if (summin <= x && x <= summax) {
+        if (initialMinSum <= x && x <= endMaxSum) {
             cout<<"Yes"<<endl;
         } else {
             cout<<"No"<<endl;
