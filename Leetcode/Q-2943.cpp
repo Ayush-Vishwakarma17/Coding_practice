@@ -2,7 +2,10 @@
 
 class Solution {
 public:
-    int maximizeSquareHoleArea(int n, int m, vector<int>& hBars, vector<int>& vBars) {
+    int maximizeSquareHoleArea(int n, int m, vector<int>& hBars, vector<int>& vBars) { 
+
+    //sorting to find the consecutive easily
+
         sort(hBars.begin(), hBars.end());
         sort(vBars.begin(), vBars.end());
         int maxConsecutiveH = 1;
@@ -25,6 +28,8 @@ public:
                 currentH = 1;
             }
         }
+            //we found the bars only not the whole square sides so we plus 1.
+            in the end returning the area.
         int side = min(maxConsecutiveV, maxConsecutiveH) + 1;
         return side*side;
     }
