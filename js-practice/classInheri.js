@@ -9,14 +9,17 @@ class User {
 
 class UserTwo extends User {
     
-    PrintUser(username, email, age) {
+    constructor(username, email, age) {
         super(username)
         this.email = email
         this.age = age
     }
 
+    printUser() {
+        console.log(`${this.username} and ${this.email} and age is: ${this.age} thanks.`)
+    }
 }
 
-const obj = new UserTwo
-const user = obj.PrintUser('Ayush', '99@', 19)
+const obj = new UserTwo('Ayush', '999@gmail.com', 19)
+obj.printUser()
 
