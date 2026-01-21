@@ -1,5 +1,7 @@
 /*
 
+-------- Using BFS Approach -----------------------------
+
 
 class Solution {
 public:
@@ -25,5 +27,35 @@ public:
         return height;
     }
 };
+
+
+---------------- Using Recustion Approach ------------------------
+
+
+class Solution {
+public:
+        
+        int maxDepth(TreeNode* root) {
+        int leftheight = 0;
+        int rightheight = 0;
+        if (root == NULL) {
+            return 0;
+        }
+        
+
+        if (root -> left) {  
+            leftheight = maxDepth(root->left);
+            
+        }
+        if (root -> right) {  
+            rightheight = maxDepth(root->right);
+            
+            
+        }
+        return 1 + max(leftheight, rightheight);
+    }
+};
+
+
 
 */
