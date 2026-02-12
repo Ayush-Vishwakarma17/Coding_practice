@@ -26,6 +26,7 @@ public:
 
 
 -------------- O of n square solution ------------------
+----------- This solution is using unordered map ---------
 this solution i made with some issues by not passing by the refference making copy every time for map takes alot of 
 time so do pass by refference if you are not manipulating the map or data structure!
 
@@ -61,5 +62,44 @@ bool isBalance(unordered_map<char,int>&freq) {
     }
 };
 
+
+-------------- O of n square solution ------------------
+----------- This solution is using a fixed size array -----------
+
+
+class Solution {
+public:
+bool isBalanced(vector<int> &freq) {
+    int num = 0;
+    for (auto val: freq) {
+        if (val > 0) {
+            num = val;
+            break;
+        }
+    }
+    for (auto val: freq) {
+        if (val == 0 || val == num) {
+            continue;
+        } else {
+            return false;
+        }
+    }
+    return true;
+}
+    int longestBalanced(string s) {
+        int maxlength = 0;
+          for (int i = 0; i < s.length(); i++) {
+            vector<int> freq(26,0);
+            for (int j = i; j < s.length(); j++) {
+                int idx = s[j]-'a';
+                freq[idx]++;
+                if (isBalanced(freq)) {
+                    maxlength = max(maxlength, j-i+1);
+                }    
+            }
+        }
+        return maxlength;
+    }
+};
 
 */
