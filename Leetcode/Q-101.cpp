@@ -52,11 +52,12 @@ public:
                     q1.push(node1 -> right), q2.push(node2 -> left);
                 } 
                 
-                //case 3 jab node ka left ho aur doosre wale node ka bhi kewal left child he ho!
-                //means no mirror condition match so we will return false
+                //case 3 agar dono node ke left aur right dono he child na ho
                 else if ((!node1 -> left && !node1 -> right) && (!node2 -> left && !node2 -> right)) {
                     continue;
                 }
+                //case 4 jab node ka left ho aur doosre wale node ka bhi kewal left child he ho!
+                //means no mirror condition match so we will return false
                 else {
                     return false;
                 }
