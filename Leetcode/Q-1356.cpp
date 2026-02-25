@@ -2,6 +2,9 @@
 
 ----------- my solution is pretty straight forward simulating the problem statement ------------
 --------- so yeah this is all i got to solve for today do your best in upcoming days ayushhh keep going forward -------------
+
+sorting + map
+
 25 feb 2026 peace out! 
 
 class Solution {
