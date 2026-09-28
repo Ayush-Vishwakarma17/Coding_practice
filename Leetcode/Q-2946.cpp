@@ -35,4 +35,8 @@ int rightShift (int idx, int k, int n) {
     }
 };
 
+
+
+----------- solution without using extra memory is just check for the updated index if not equal then return false --------
+
 */

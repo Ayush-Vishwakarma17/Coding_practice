@@ -2,7 +2,7 @@ const name = "Ayush"
 
 // using parameter and argument passing
 
-setTimeout((n) => {
+setTimeout((n) => { 
     console.log(n)
 }, 1000, "Ayush")
 
